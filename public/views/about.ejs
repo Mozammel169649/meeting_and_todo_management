@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%= data %> adsf
+        <form action="/c" onsubmit="s()" method="post">
+            <input type="text" name="title" value="">
+            <input type="text" name="email" value="a@g.com">
+            <input type="file" name="image[]" multiple accept="image/*">
+            <button>submit</button>
+        </form>
+        <script>
+            function s() {
+                event.preventDefault();
+                window.fetch('/c', {
+                    method: 'POST',
+                    body: new FormData(event.target)
+                    //body: "{data: 1212}"
+                })
+            }
+        </script>
+</body>
+
+</html>
