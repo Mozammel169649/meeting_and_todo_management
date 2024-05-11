@@ -19,25 +19,25 @@ async function validate(req: Request) {
     await body('branch_id')
         .not()
         .isEmpty()
-        .withMessage('the name field is required')
+        .withMessage('the branch_id field is required')
         .run(req);
 
     await body('title')
         .not()
         .isEmpty()
-        .withMessage('the preferred name field is required')
+        .withMessage('the title field is required')
         .run(req);
 
     await body('description')
         .not()
         .isEmpty()
-        .withMessage('the preferred name field is required')
+        .withMessage('the description field is required')
         .run(req);
 
     await body('date')
         .not()
         .isEmpty()
-        .withMessage('the preferred name field is required')
+        .withMessage('the date field is required')
         .run(req);
 
 

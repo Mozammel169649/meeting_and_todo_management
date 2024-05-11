@@ -16,7 +16,7 @@ content-type: application/json
 Authorization: {{token}}
 
 {
-     "branch_id": 3,
+    "branch_id": 3,
     "title": "Teacher meatings",
     "description": "On sunday will be held on Teacher meatings",
     "date": "12-11-2024"
@@ -30,7 +30,7 @@ content-type: application/json
 Authorization: {{token}}
 
 {
-    "id": 2,
+    "id": 1,
     "branch_id": 1,
     "title": "Parents meatings",
     "description": "On sunday will be held on parents meatings",

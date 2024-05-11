@@ -38,7 +38,7 @@ class DataModel extends Model<Infer, InferCreation> {
     declare date: string ;
 
     declare status?: number;
-
+    declare creator?: number;
     declare created_at?: CreationOptional<Date>;
     declare updated_at?: CreationOptional<Date>;
 }
@@ -66,6 +66,11 @@ function init(sequelize: Sequelize) {
             date: {
                 type: new DataTypes.DATE(),
                 allowNull: true,
+            },
+            creator: {
+                type: new DataTypes.TINYINT(),
+                allowNull: true,
+                defaultValue: null,
             },
             status: {
                 type: new DataTypes.TINYINT(),
