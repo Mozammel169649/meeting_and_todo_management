@@ -23,18 +23,19 @@ import {
     // ForeignKey,
 } from 'sequelize';
 
-const tableName = 'users';
-const modelName = 'UserModel';
+const tableName = 'meetings';
+const modelName = 'MeetingsModel';
 
 type Infer = InferAttributes<DataModel>;
 type InferCreation = InferCreationAttributes<DataModel>;
 
 class DataModel extends Model<Infer, InferCreation> {
     declare id?: CreationOptional<number>;
-    declare name: string;
-    declare email: string;
-    declare password: string;
-    declare token?: string;
+
+    declare branch_id: number;
+    declare title: string;
+    declare description: string;
+    declare date: string ;
 
     declare status?: number;
 
@@ -50,20 +51,20 @@ function init(sequelize: Sequelize) {
                 autoIncrement: true,
                 primaryKey: true,
             },
-            name: {
-                type: new DataTypes.STRING(100),
+            branch_id: {
+                type: new DataTypes.BIGINT().UNSIGNED,
                 allowNull: false,
             },
-            email: {
-                type: new DataTypes.STRING(100),
+            title: {
+                type: new DataTypes.STRING(128),
                 allowNull: true,
             },
-            password: {
-                type: new DataTypes.STRING(100),
+            description: {
+                type: new DataTypes.TEXT(),
                 allowNull: true,
             },
-            token: {
-                type: new DataTypes.TEXT,
+            date: {
+                type: new DataTypes.DATE(),
                 allowNull: true,
             },
             status: {
