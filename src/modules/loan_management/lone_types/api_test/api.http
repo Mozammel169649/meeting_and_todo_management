@@ -1,5 +1,5 @@
-@hostname = http://127.0.0.1:5000/api/v1/tasks
-@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidG9rZW4iOiJrZ3Y1M2RrdyIsImlhdCI6MTcxNTQ5MjgwMX0.pyu8TNaBLK6sq2sGsY7gaDvaKWUxKcOnwVrWvIe9S28
+@hostname = http://127.0.0.1:5000/api/v1/lone-types
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidG9rZW4iOiJwOGV0OHh2cSIsImlhdCI6MTcxNTQxNDc3M30.4FlpO3egPNciB8uZxoenUGxRCyrYmQfb20VcYlqDgG8
 
 # all
 ###
@@ -16,12 +16,9 @@ content-type: application/json
 Authorization: {{token}}
 
 {
-
-    "branch_id": 1,
+    "branch_id": 3,
     "title": "Teacher meatings",
-    "description": "On sunday will be held on Teacher meatings",
-    "is_complete": "running",
-    "date": "12-11-2024"
+    "description": "On sunday will be held on Teacher meatings"
 }
 
 
@@ -35,8 +32,7 @@ Authorization: {{token}}
     "id": 1,
     "branch_id": 3,
     "title": "Parents meatings",
-    "description": "On sunday will be held on parents meatings",
-    "date": "12-10-2024"
+    "description": "On sunday will be held on parents meatings"
 }
 
 # delete
