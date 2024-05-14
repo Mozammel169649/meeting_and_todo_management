@@ -88,3 +88,11 @@
 {"level":60,"time":1715426360676,"pid":17164,"hostname":"DESKTOP-D7AG2LN","file":" Function._findAutoIncrementAttribute (C:\\Users\\Tech IT\\Desktop\\mozammel\\fastify_sql_typescript_react_boiler_pl","time":"5/11/2024 5:19:20 PM","message":"Invalid Instance definition. Only one autoincrement field allowed."}
 {"level":60,"time":1715493020199,"pid":14104,"hostname":"DESKTOP-D7AG2LN","file":" position 124","time":"5/12/2024 11:50:20 AM","message":"Unexpected token } in JSON at position 124"}
 {"level":60,"time":1715493035104,"pid":14104,"hostname":"DESKTOP-D7AG2LN","file":" position 124","time":"5/12/2024 11:50:35 AM","message":"Unexpected token } in JSON at position 124"}
+{"level":60,"time":1715577349896,"pid":3544,"hostname":"DESKTOP-D7AG2LN","file":" position 17","time":"5/13/2024 11:15:49 AM","message":"Unexpected token } in JSON at position 17"}
+{"level":60,"time":1715595462788,"pid":5396,"hostname":"DESKTOP-D7AG2LN","file":" position 17","time":"5/13/2024 4:17:42 PM","message":"Unexpected token } in JSON at position 17"}
+{"level":60,"time":1715596718438,"pid":10420,"hostname":"DESKTOP-D7AG2LN","file":" position 17","time":"5/13/2024 4:38:38 PM","message":"Unexpected token } in JSON at position 17"}
+{"level":60,"time":1715597316519,"pid":1828,"hostname":"DESKTOP-D7AG2LN","file":" position 150","time":"5/13/2024 4:48:36 PM","message":"Unexpected token } in JSON at position 150"}
+{"level":60,"time":1715598322980,"pid":12088,"hostname":"DESKTOP-D7AG2LN","file":" Query.run (C:\\Users\\Tech IT\\Desktop\\mozammel\\fastify_sql_typescript_react_boiler_pl","time":"5/13/2024 5:05:22 PM","message":"Incorrect integer value: 'deactive' for column 'status' at row 1"}
+{"level":60,"time":1715598356820,"pid":12088,"hostname":"DESKTOP-D7AG2LN","file":" Query.run (C:\\Users\\Tech IT\\Desktop\\mozammel\\fastify_sql_typescript_react_boiler_pl","time":"5/13/2024 5:05:56 PM","message":"Incorrect integer value: 'deactive' for column 'status' at row 1"}
+{"level":60,"time":1715601418424,"pid":10004,"hostname":"DESKTOP-D7AG2LN","file":" position 58","time":"5/13/2024 5:56:58 PM","message":"Unexpected token } in JSON at position 58"}
+{"level":60,"time":1715694946796,"pid":4100,"hostname":"DESKTOP-D7AG2LN","file":" position 359","time":"5/14/2024 7:55:46 PM","message":"Unexpected token } in JSON at position 359"}
