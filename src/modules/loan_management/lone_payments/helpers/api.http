@@ -16,10 +16,10 @@ content-type: application/json
 Authorization: {{token}}
 
 {
-    "branch_id": 1,
-    "branch_teacher_id": 1,
-    "branch_staff_id": 1,
-    "lone_type_id": 1,
+    "branch_id": 2,
+    "branch_teacher_id": 2,
+    "branch_staff_id": 2,
+    "lone_type_id": 2,
     "need_date": "10-10-2025",
     "application_date": "12-11-2024",
     "will_pay_date": "08-01-2025",
@@ -39,11 +39,11 @@ content-type: application/json
 Authorization: {{token}}
 
 {
-    "id": 3,
-    "branch_id": 3,
-    "branch_teacher_id": 3,
-    "branch_staff_id": 3,
-    "lone_type_id": 3,
+    "id": 2,
+    "branch_id": 2,
+    "branch_teacher_id": 2,
+    "branch_staff_id": 2,
+    "lone_type_id": 2,
     "need_date": "10-10-2025",
     "application_date": "12-11-2024",
     "will_pay_date": "08-01-2025",
@@ -61,7 +61,7 @@ POST  {{hostname}}/soft-delete HTTP/1.1
 content-type: application/json
 
 {
-    "id": 3
+    "id": 2
 }
 
 # restore
@@ -70,7 +70,7 @@ POST  {{hostname}}/restore HTTP/1.1
 content-type: application/json
 
 {
-    "id": 3
+    "id": 2
 }
 
 

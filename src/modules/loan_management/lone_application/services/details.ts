@@ -10,13 +10,11 @@ async function details(
 ): Promise<responseObject> {
     let models = await db();
     let params = req.params as any;
-    console.log('id',params.id);
-    console.log('id',params);
-    
+    console.log('id', params.id);
+    console.log('id', params);
 
     try {
         let data = await models.LoneApplicationModel.findOne({
-            
             where: {
                 id: params.id,
             },

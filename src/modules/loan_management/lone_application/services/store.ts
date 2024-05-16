@@ -10,7 +10,6 @@ import response from '../helpers/response';
 import { InferCreationAttributes } from 'sequelize';
 
 async function validate(req: Request) {
-
     await body('branch_id')
         .not()
         .isEmpty()
@@ -52,7 +51,6 @@ async function validate(req: Request) {
         .isEmpty()
         .withMessage('the will_pay_date field is required')
         .run(req);
-        
     await body('given_date')
         .not()
         .isEmpty()
@@ -64,7 +62,7 @@ async function validate(req: Request) {
         .isEmpty()
         .withMessage('the application_status field is required')
         .run(req);
-        
+
     await body('reason')
         .not()
         .isEmpty()
@@ -89,7 +87,6 @@ async function validate(req: Request) {
         .withMessage('the pay_amount field is required')
         .run(req);
 
-
     let result = await validationResult(req);
 
     return result;
@@ -111,7 +108,6 @@ async function store(
     let data = new models.LoneApplicationModel();
 
     let inputs: InferCreationAttributes<typeof data> = {
-      
         branch_id: body.branch_id,
         branch_teacher_id: body.branch_teacher_id,
         branch_staff_id: body.branch_staff_id,
@@ -121,13 +117,12 @@ async function store(
         application_date: body.application_date,
         will_pay_date: body.will_pay_date,
         given_date: body.given_date,
-        
+
         application_status: body.application_status,
         reason: body.reason,
         attachments: body.attachments,
         requst_amount: body.requst_amount,
         pay_amount: body.pay_amount,
-       
     };
 
     /** print request data into console */

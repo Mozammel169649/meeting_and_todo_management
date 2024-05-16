@@ -27,7 +27,6 @@ enum is_complete {
     pending = 'pending',
     running = 'running',
     completed = 'completed',
-    nexttime = 'nexttime',
 }
 
 const tableName = 'lone_application';
@@ -35,6 +34,7 @@ const modelName = 'LoneApplicationModel';
 
 type Infer = InferAttributes<DataModel>;
 type InferCreation = InferCreationAttributes<DataModel>;
+type status = 'active' | 'deactive';
 
 class DataModel extends Model<Infer, InferCreation> {
     declare id?: CreationOptional<number>;
@@ -44,19 +44,18 @@ class DataModel extends Model<Infer, InferCreation> {
     declare branch_staff_id: number;
     declare lone_type_id: number;
 
-    declare need_date: string ;
-    declare application_date: string ;    
-    declare will_pay_date: string ;
-    declare given_date: string; 
+    declare need_date: string;
+    declare application_date: string;
+    declare will_pay_date: string;
+    declare given_date: string;
 
-    declare application_status:is_complete ;
+    declare application_status: is_complete;
     declare reason: string;
     declare attachments: string;
     declare requst_amount: Number;
     declare pay_amount: Number;
-  
 
-    declare status?: number;
+    declare status?: status;
     declare creator?: number;
     declare created_at?: CreationOptional<Date>;
     declare updated_at?: CreationOptional<Date>;
@@ -86,7 +85,7 @@ function init(sequelize: Sequelize) {
                 type: new DataTypes.BIGINT().UNSIGNED,
                 allowNull: false,
             },
-            
+
             given_date: {
                 type: new DataTypes.DATE(),
                 allowNull: true,
@@ -104,11 +103,7 @@ function init(sequelize: Sequelize) {
                 allowNull: true,
             },
             application_status: {
-                type: new DataTypes.ENUM(
-                    'pending',
-                    'running',
-                    'completed'
-                ),
+                type: new DataTypes.ENUM('pending', 'running', 'completed'),
                 allowNull: true,
             },
             reason: {
@@ -127,17 +122,14 @@ function init(sequelize: Sequelize) {
                 type: new DataTypes.BIGINT().UNSIGNED,
                 allowNull: true,
             },
-
-
             creator: {
                 type: new DataTypes.TINYINT(),
                 allowNull: true,
                 defaultValue: null,
             },
             status: {
-                type: new DataTypes.TINYINT(),
-                allowNull: true,
-                defaultValue: 1,
+                type: new DataTypes.ENUM('active', 'deactive'),
+                defaultValue: 'active',
             },
             created_at: DataTypes.DATE,
             updated_at: DataTypes.DATE,

@@ -16,7 +16,7 @@ async function validate(req: Request) {
         .withMessage('the id field is required')
         .run(req);
 
-        await body('branch_id')
+    await body('branch_id')
         .not()
         .isEmpty()
         .withMessage('the branch_id field is required')
@@ -57,7 +57,7 @@ async function validate(req: Request) {
         .isEmpty()
         .withMessage('the will_pay_date field is required')
         .run(req);
-        
+
     await body('given_date')
         .not()
         .isEmpty()
@@ -69,7 +69,7 @@ async function validate(req: Request) {
         .isEmpty()
         .withMessage('the application_status field is required')
         .run(req);
-        
+
     await body('reason')
         .not()
         .isEmpty()
@@ -93,7 +93,6 @@ async function validate(req: Request) {
         .isEmpty()
         .withMessage('the pay_amount field is required')
         .run(req);
-
 
     let result = await validationResult(req);
 
