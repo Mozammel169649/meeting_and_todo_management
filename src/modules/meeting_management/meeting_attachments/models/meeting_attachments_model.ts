@@ -28,12 +28,7 @@ const modelName = 'MeetingAttachmentsModel';
 
 type Infer = InferAttributes<DataModel>;
 type InferCreation = InferCreationAttributes<DataModel>;
-enum is_complete {
-    pending = 'pending',
-    running = 'running',
-    completed = 'completed',
-    nexttime = 'nexttime',
-}
+type status = 'active' | 'deactive';
 
 class DataModel extends Model<Infer, InferCreation> {
     declare id?: CreationOptional<number>;
@@ -42,8 +37,8 @@ class DataModel extends Model<Infer, InferCreation> {
     declare meeting_id: number;
     declare attachment: string;
     declare text: string;
-   
-    declare status?: number;
+
+    declare status?: status;
     declare creator?: number;
     declare created_at?: CreationOptional<Date>;
     declare updated_at?: CreationOptional<Date>;
@@ -74,16 +69,14 @@ function init(sequelize: Sequelize) {
                 allowNull: true,
             },
 
-
             creator: {
                 type: new DataTypes.TINYINT(),
                 allowNull: true,
                 defaultValue: null,
             },
             status: {
-                type: new DataTypes.TINYINT(),
-                allowNull: true,
-                defaultValue: 1,
+                type: new DataTypes.ENUM('active', 'deactive'),
+                defaultValue: 'active',
             },
             created_at: DataTypes.DATE,
             updated_at: DataTypes.DATE,
