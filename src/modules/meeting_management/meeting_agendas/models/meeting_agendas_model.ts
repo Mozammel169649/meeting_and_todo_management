@@ -34,6 +34,7 @@ enum is_complete {
     completed = 'completed',
     nexttime = 'nexttime',
 }
+type status = 'active' | 'deactive';
 
 class DataModel extends Model<Infer, InferCreation> {
     declare id?: CreationOptional<number>;
@@ -44,9 +45,7 @@ class DataModel extends Model<Infer, InferCreation> {
     declare description: string;
     declare is_complete: is_complete;
 
-  
-
-    declare status?: number;
+    declare status?: status;
     declare creator?: number;
     declare created_at?: CreationOptional<Date>;
     declare updated_at?: CreationOptional<Date>;
@@ -91,9 +90,8 @@ function init(sequelize: Sequelize) {
                 defaultValue: null,
             },
             status: {
-                type: new DataTypes.TINYINT(),
-                allowNull: true,
-                defaultValue: 1,
+                type: new DataTypes.ENUM('active', 'deactive'),
+                defaultValue: 'active',
             },
             created_at: DataTypes.DATE,
             updated_at: DataTypes.DATE,
