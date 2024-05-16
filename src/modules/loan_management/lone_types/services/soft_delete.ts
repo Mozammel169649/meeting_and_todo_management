@@ -18,9 +18,10 @@ async function soft_delete(
     });
 
     if (data) {
-        await data.update({
-            status: 0,
-        });
+        // await data.update({
+        //     status: 0,
+        // });
+        data.status = 'deactive';
         await data.save();
         return response(200, 'data deactivated', data);
     } else {

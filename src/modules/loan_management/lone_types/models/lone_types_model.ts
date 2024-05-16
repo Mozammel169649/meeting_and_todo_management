@@ -28,6 +28,7 @@ const modelName = 'LoneTypesModel';
 
 type Infer = InferAttributes<DataModel>;
 type InferCreation = InferCreationAttributes<DataModel>;
+type status = 'active' | 'deactive';
 
 class DataModel extends Model<Infer, InferCreation> {
     declare id?: CreationOptional<number>;
@@ -35,9 +36,8 @@ class DataModel extends Model<Infer, InferCreation> {
     declare branch_id: number;
     declare title: string;
     declare description: string;
-   
 
-    declare status?: number;
+    declare status?: status;
     declare creator?: number;
     declare created_at?: CreationOptional<Date>;
     declare updated_at?: CreationOptional<Date>;
@@ -63,16 +63,14 @@ function init(sequelize: Sequelize) {
                 type: new DataTypes.TEXT(),
                 allowNull: true,
             },
-            
             creator: {
                 type: new DataTypes.TINYINT(),
                 allowNull: true,
                 defaultValue: null,
             },
             status: {
-                type: new DataTypes.TINYINT(),
-                allowNull: true,
-                defaultValue: 1,
+                type: new DataTypes.ENUM('active', 'deactive'),
+                defaultValue: 'active',
             },
             created_at: DataTypes.DATE,
             updated_at: DataTypes.DATE,
