@@ -63,7 +63,7 @@ function init(sequelize: Sequelize) {
                 allowNull: true,
             },
             token: {
-                type: new DataTypes.TEXT,
+                type: new DataTypes.TEXT(),
                 allowNull: true,
             },
             status: {
