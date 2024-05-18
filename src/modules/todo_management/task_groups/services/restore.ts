@@ -18,9 +18,7 @@ async function restore(
     });
 
     if (data) {
-        await data.update({
-            status: 1,
-        });
+        data.status = 'active';
         await data.save();
         return response(200, 'data restored', data);
     } else {
