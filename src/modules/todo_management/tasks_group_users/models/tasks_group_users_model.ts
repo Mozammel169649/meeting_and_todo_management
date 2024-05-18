@@ -34,6 +34,7 @@ const modelName = 'TasksGroupUsers';
 
 type Infer = InferAttributes<DataModel>;
 type InferCreation = InferCreationAttributes<DataModel>;
+type status = 'active' | 'deactive';
 
 class DataModel extends Model<Infer, InferCreation> {
     declare id?: CreationOptional<number>;
@@ -41,9 +42,9 @@ class DataModel extends Model<Infer, InferCreation> {
     declare branch_id: number;
     declare user_id: number;
     declare task_group_id: number;
-   
+
     declare creator?: number;
-    declare status?: number;
+    declare status?: status;
     declare created_at?: CreationOptional<Date>;
     declare updated_at?: CreationOptional<Date>;
 }
@@ -68,7 +69,6 @@ function init(sequelize: Sequelize) {
                 type: new DataTypes.BIGINT().UNSIGNED,
                 allowNull: false,
             },
-           
 
             creator: {
                 type: new DataTypes.TINYINT(),
@@ -76,9 +76,8 @@ function init(sequelize: Sequelize) {
                 defaultValue: null,
             },
             status: {
-                type: new DataTypes.TINYINT(),
-                allowNull: true,
-                defaultValue: 1,
+                type: new DataTypes.ENUM('active', 'deactive'),
+                defaultValue: 'active',
             },
             created_at: DataTypes.DATE,
             updated_at: DataTypes.DATE,
