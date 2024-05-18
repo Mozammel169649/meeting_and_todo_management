@@ -12,7 +12,7 @@ async function data_import(
     let params = req.params as any;
 
     try {
-        let data = await models.User.findOne({
+        let data = await models.UserAdminsModel.findOne({
             where: {
                 id: params.id,
             },

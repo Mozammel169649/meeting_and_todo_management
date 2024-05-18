@@ -40,7 +40,7 @@ async function store(
     /** initializations */
     let models = await db();
     let body = req.body as anyObject;
-    let data = new models.User();
+    let data = new models.UserAdminsModel();
 
     let inputs: InferCreationAttributes<typeof data> = {
         name: body.name,
