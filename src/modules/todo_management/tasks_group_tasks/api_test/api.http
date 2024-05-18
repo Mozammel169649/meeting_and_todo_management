@@ -29,11 +29,10 @@ content-type: application/json
 Authorization: {{token}}
 
 {
-    "id": 1,
-    "branch_id": 1,
-    "title": "Parents meatings",
-    "description": "On sunday will be held on parents meatings",
-    "date": "12-10-2024"
+    "id": 2,
+    "branch_id": 2,
+    "task_id": 2,
+    "task_group_id": 2
 }
 
 # delete
@@ -42,7 +41,7 @@ POST  {{hostname}}/soft-delete HTTP/1.1
 content-type: application/json
 
 {
-    "id": "1"
+    "id": 2
 }
 
 # restore
@@ -51,7 +50,7 @@ POST  {{hostname}}/restore HTTP/1.1
 content-type: application/json
 
 {
-    "id": "6517befe584d780b51e04b2d",
+    "id": 2
 }
 
 
