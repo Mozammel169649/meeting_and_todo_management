@@ -34,6 +34,7 @@ const modelName = 'TaskUsersModel';
 
 type Infer = InferAttributes<DataModel>;
 type InferCreation = InferCreationAttributes<DataModel>;
+type status = 'active' | 'deactive';
 
 class DataModel extends Model<Infer, InferCreation> {
     declare id?: CreationOptional<number>;
@@ -46,7 +47,7 @@ class DataModel extends Model<Infer, InferCreation> {
     declare is_complete: is_complete;
 
     declare creator?: number;
-    declare status?: number;
+    declare status?: status;
     declare created_at?: CreationOptional<Date>;
     declare updated_at?: CreationOptional<Date>;
 }
@@ -79,7 +80,6 @@ function init(sequelize: Sequelize) {
                 type: new DataTypes.BIGINT().UNSIGNED,
                 allowNull: false,
             },
-            
             is_complete: {
                 type: new DataTypes.ENUM(
                     'pending',
@@ -90,16 +90,14 @@ function init(sequelize: Sequelize) {
                 allowNull: true,
             },
 
-            
             creator: {
                 type: new DataTypes.TINYINT(),
                 allowNull: true,
                 defaultValue: null,
             },
             status: {
-                type: new DataTypes.TINYINT(),
-                allowNull: true,
-                defaultValue: 1,
+                type: new DataTypes.ENUM('active', 'deactive'),
+                defaultValue: 'active',
             },
             created_at: DataTypes.DATE,
             updated_at: DataTypes.DATE,
