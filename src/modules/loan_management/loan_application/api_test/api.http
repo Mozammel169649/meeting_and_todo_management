@@ -1,0 +1,84 @@
+@hostname = http://127.0.0.1:5000/api/v1/lone-application
+@token = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidG9rZW4iOiI4bzJpNnViaiIsImlhdCI6MTcxNTU3NjY1Nn0.rOLdGjLZSdc4TQMzJ3FBk1SDNvnMjmu75wANBkZGjMw
+
+# all
+###
+GET {{hostname}} HTTP/1.1
+
+# get
+###
+GET {{hostname}}/1 HTTP/1.1
+
+# store
+###
+POST  {{hostname}}/store HTTP/1.1
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "branch_id": 1,
+    "branch_teacher_id": 1,
+    "branch_staff_id": 1,
+    "lone_type_id": 1,
+    "need_date": "10-10-2025",
+    "application_date": "12-11-2024",
+    "will_pay_date": "08-01-2025",
+    "given_date": "10-01-2026",
+    "application_status": "completed",
+    "reason": "i want to invest my business",
+    "attachments": "file2.pdf",
+    "requst_amount": 10000,
+    "pay_amount": 10000
+}
+
+
+# update
+###
+POST {{hostname}}/update HTTP/1.1 
+content-type: application/json
+Authorization: {{token}}
+
+{
+    "id": 3,
+    "branch_id": 3,
+    "branch_teacher_id": 3,
+    "branch_staff_id": 3,
+    "lone_type_id": 3,
+    "need_date": "10-10-2025",
+    "application_date": "12-11-2024",
+    "will_pay_date": "08-01-2025",
+    "given_date": "10-01-2026",
+    "application_status": "completed",
+    "reason": "i want to invest my business",
+    "attachments": "file2.pdf",
+    "requst_amount": 10000,
+    "pay_amount": 10000
+}
+
+# delete
+###
+POST  {{hostname}}/soft-delete HTTP/1.1
+content-type: application/json
+
+{
+    "id": 3
+}
+
+# restore
+###
+POST  {{hostname}}/restore HTTP/1.1
+content-type: application/json
+
+{
+    "id": 3
+}
+
+
+# destroy
+###
+POST  {{hostname}}/destroy HTTP/1.1
+content-type: application/json
+
+{
+    "id": 2
+}
