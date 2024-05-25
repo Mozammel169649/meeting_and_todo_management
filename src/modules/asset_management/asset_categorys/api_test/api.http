@@ -17,7 +17,7 @@ Authorization: {{token}}
 
 {
     "branch_id": 1,
-    "title": "teachrt"
+    "title": "teacher"
 }
 
 
@@ -30,7 +30,7 @@ Authorization: {{token}}
 {
     "id": 2,
     "branch_id": 2,
-    "title": "teachrt"
+    "title": "teacher"
 }
 
 # delete
