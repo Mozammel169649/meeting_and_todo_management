@@ -27,31 +27,32 @@ async function validate(req: Request) {
         .isEmpty()
         .withMessage('the notice_id field is required')
         .run(req);
-    await body('teacher_id')
-        .not()
-        .isEmpty()
-        .withMessage('the teacher_id field is required')
-        .run(req);
-    await body('staff_id')
-        .not()
-        .isEmpty()
-        .withMessage('the staff_id field is required')
-        .run(req);
-    await body('student_id')
-        .not()
-        .isEmpty()
-        .withMessage('the student_id field is required')
-        .run(req);
-    await body('parent_id')
-        .not()
-        .isEmpty()
-        .withMessage('the parent_id field is required')
-        .run(req);
-    await body('admin_id')
-        .not()
-        .isEmpty()
-        .withMessage('the admin_id field is required')
-        .run(req);
+
+    // await body('teacher_id')
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage('the teacher_id field is required')
+    //     .run(req);
+    // await body('staff_id')
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage('the staff_id field is required')
+    //     .run(req);
+    // await body('student_id')
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage('the student_id field is required')
+    //     .run(req);
+    // await body('parent_id')
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage('the parent_id field is required')
+    //     .run(req);
+    // await body('admin_id')
+    //     .not()
+    //     .isEmpty()
+    //     .withMessage('the admin_id field is required')
+    //     .run(req);
 
     let result = await validationResult(req);
 
