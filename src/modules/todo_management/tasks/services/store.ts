@@ -65,7 +65,7 @@ async function store(
         title: body.title,
         description: body.description,
         is_complete: body.is_complete,
-        date: body.date
+        date: body.date,
     };
 
     /** print request data into console */

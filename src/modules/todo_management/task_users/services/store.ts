@@ -73,7 +73,6 @@ async function store(
         admin_id: body.admin_id,
         task_id: body.task_id,
         is_complete: body.is_complete,
-      
     };
 
     /** print request data into console */

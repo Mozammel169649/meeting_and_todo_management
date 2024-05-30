@@ -21,14 +21,11 @@ async function validate(req: Request) {
         .isEmpty()
         .withMessage('the task_id field is required')
         .run(req);
-        
     await body('variants_id')
         .not()
         .isEmpty()
         .withMessage('the variants_id field is required')
         .run(req);
-   
-
     let result = await validationResult(req);
 
     return result;
@@ -52,7 +49,7 @@ async function store(
     let inputs: InferCreationAttributes<typeof data> = {
         branch_id: body.branch_id,
         task_id: body.task_id,
-        variants_id: body.variants_id
+        variants_id: body.variants_id,
     };
 
     /** print request data into console */
