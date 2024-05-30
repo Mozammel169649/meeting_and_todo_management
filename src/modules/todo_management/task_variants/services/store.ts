@@ -21,7 +21,7 @@ async function validate(req: Request) {
         .isEmpty()
         .withMessage('the title field is required')
         .run(req);
-        
+
     await body('color')
         .not()
         .isEmpty()
@@ -33,7 +33,6 @@ async function validate(req: Request) {
         .isEmpty()
         .withMessage('the description field is required')
         .run(req);
-   
 
     let result = await validationResult(req);
 
@@ -58,8 +57,8 @@ async function store(
     let inputs: InferCreationAttributes<typeof data> = {
         branch_id: body.branch_id,
         title: body.title,
-        color: body.color, 
-        description: body.description, 
+        color: body.color,
+        description: body.description,
     };
 
     /** print request data into console */
